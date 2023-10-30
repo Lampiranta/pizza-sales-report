@@ -142,10 +142,36 @@ ORDER BY SUM(quantity) DESC
 
 6. Top 5 best sellers by revenue, total quantity and total orders:
 ```SQL
-SELECT
+SELECT TOP 5 pizza_name as [Pizza Name],
+SUM(total_price) as [Revenue],
+SUM(quantity) as [Total Quantity],
+COUNT(DISTINCT order_id) as [Total Orders]
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY SUM(total_price) DESC
 ```
+| Pizza Name                   | Revenue  | Total Quantity | Total Orders |
+|------------------------------|----------|----------------|--------------|
+| The Thai Chicken Pizza       | 43434.25 | 2371           | 2225         |
+| The Barbecue Chicken Pizza   | 42768    | 2432           | 2273         |
+| The California Chicken Pizza | 41409.5  | 2370           | 2197         |
+| The Classic Deluxe Pizza     | 38180.5  | 2453           | 2329         |
+| The Spicy Italian Pizza      | 34831.25 | 1924           | 1822         |
 
 7. Bottom 5 best sellers by revenue, total quantity and total orders:
 ```SQL
-SELECT
+SELECT TOP 5 pizza_name as [Pizza Name],
+SUM(total_price) as [Revenue],
+SUM(quantity) as [Total Quantity],
+COUNT(DISTINCT order_id) as [Total Orders]
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY SUM(total_price) ASC
 ```
+| Pizza Name                | Revenue          | Total Quantity | Total Orders |
+|---------------------------|------------------|----------------|--------------|
+| The Brie Carre Pizza      | 11588.4998130798 | 490            | 480          |
+| The Green Garden Pizza    | 13955.75         | 997            | 976          |
+| The Spinach Supreme Pizza | 15277.75         | 950            | 918          |
+| The Mediterranean Pizza   | 15360.5          | 934            | 912          |
+| The Spinach Pesto Pizza   | 15596            | 970            | 945          |
