@@ -78,36 +78,67 @@ SELECT DATENAME(M, order_date) as [Order Day],
 COUNT(DISTINCT order_id) AS [Total Orders] 
 FROM pizza_sales
 GROUP BY DATENAME(M, order_date)
+ORDER BY COUNT(DISTINCT order_id) DESC
 ```
 | Order Day | Total Orders |
 |-----------|--------------|
-| February  | 1685         |
-| August    | 1841         |
-| June      | 1773         |
-| April     | 1799         |
-| December  | 1680         |
-| January   | 1845         |
-| September | 1661         |
-| May       | 1853         |
-| October   | 1646         |
-| November  | 1792         |
-| March     | 1840         |
 | July      | 1935         |
+| May       | 1853         |
+| January   | 1845         |
+| August    | 1841         |
+| March     | 1840         |
+| April     | 1799         |
+| November  | 1792         |
+| June      | 1773         |
+| February  | 1685         |
+| December  | 1680         |
+| September | 1661         |
+| October   | 1646         |
 
 3. Percentage of sales by pizza category:
 ```SQL
-SELECT
+SELECT pizza_category as [Pizza gategory],  
+(SUM(total_price)/(SELECT SUM(total_price) FROM pizza_sales))*100 as [Percentage of Sales]
+FROM pizza_sales
+GROUP BY pizza_category
 ```
+| Pizza gategory | Percentage of Sales |
+|----------------|---------------------|
+| Classic        | 26.9059602306976    |
+| Chicken        | 23.9551375322885    |
+| Veggie         | 23.6825910258677    |
+| Supreme        | 25.4563112111462    |
 
 4. Percentage of sales by pizza size:
 ```SQL
-SELECT
+SELECT pizza_size as [Pizza size],  
+(SUM(total_price)/(SELECT SUM(total_price) FROM pizza_sales))*100 as [Percentage of Sales]
+FROM pizza_sales
+GROUP BY pizza_size
+Order by SUM(total_price) DESC
 ```
+| Pizza size | Percentage of Sales |
+|------------|---------------------|
+| L          | 45.8903330244889    |
+| M          | 30.492044420599     |
+| S          | 21.7734684107037    |
+| XL         | 1.72107684995364    |
+| XXL        | 0.123077294254725   |
 
 5. Total pizzas sold by pizza category:
 ```SQL
-SELECT
+SELECT pizza_category as [Pizza Category],  
+SUM(quantity) as [Pizzas Sold]
+FROM pizza_sales
+GROUP BY pizza_category
+ORDER BY SUM(quantity) DESC
 ```
+| Pizza Category | Pizzas Sold       |
+|----------------|-------------------|
+| Classic        | 14888             |
+| Supreme        | 11987             |
+| Veggie         | 11649             |
+| Chicken        | 11050             |
 
 6. Top 5 best sellers by revenue, total quantity and total orders:
 ```SQL
