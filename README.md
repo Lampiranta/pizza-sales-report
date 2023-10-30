@@ -11,7 +11,7 @@ Need to analyze key indicators for pizza sales data to gain insights into busine
 2. **Average Order Value:** The average amount spent per order, calculated by dividing the total revenue by the total number of orders.
 3. **Total Pizzas Sold:** The sum of the quantities of all pizzas sold.
 4. **Total Orders:** The total number of orders placed.
-5. **Average Pizzas Per Order:** The average number ofpizzas sold per order, calculated by dividing the total number of pizzas sold by the total number of orders. 
+5. **Average Pizzas Per Order:** The average number of pizzas sold per order, calculated by dividing the total number of pizzas sold by the total number of orders. 
 
 ### Charts Requirements
 
@@ -19,7 +19,7 @@ Like to visualize various aspects of pizz sales data to gain insights and unders
 
 1. **Daily trend for total orders:** Create a bar chart that displays the daily trend of total orders over a specific time period. This chart will help us identify any pattern or fluctuations in order volumes on a daily basis.
 2. **Monthly trend for total orders:** Create a line chart that illustrates the hourly trend of total orders throughout the day. This chart will allow us to identify peak hours or periods of high order activity.
-3. **Percentage of sales by pizza category:** Create a pie chart that shows the distribution of sales across deffirent pizza categories. THis chart will provude insights into the popularity of various pizza categories and their contribution to overall sales.
+3. **Percentage of sales by pizza category:** Create a pie chart that shows the distribution of sales across different pizza categories. This chart will provide insights into the popularity of various pizza categories and their contribution to overall sales.
 4. **Percentage of sales by pizza size:** Generate a pie chart that represents the percentage of sales attributed to different pizza sizes. This chart will help us understand customer preferences for pizza sizes and their impact on sales.
 5. **Total pizzas sold by pizza category:** Create a funnel chart that presents the total number of pizzas sold for each pizza category. This chart will allow us to compare the sales performance of different pizza categories.
 6. **Top 5 best sellers by revenue, total quantity and total orders:** Create a pie chart highlighting the 5 best-selling pizzas based on the revenue, total quatity, total orders. This chart will help us identify the most popular pizza options.
